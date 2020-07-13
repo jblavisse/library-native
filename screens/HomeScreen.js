@@ -1,15 +1,20 @@
 import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 
-function HomeScreen({navigation, route}) {
-    function navigateToDetails() {
-        navigation.navigate("details");
+function HomeScreen({navigation}) {
+    function navigateToLibrary() {
+        navigation.reset({
+            index: 0,
+            routes: [
+                {name: "library"}
+            ]   
+        });
     }
 
     return(
         <View style={styles.container}>
-            <Text>Bienvenue dans ma page d'accueil!</Text>
-            <Button title="Voir des détails!" onPress={navigateToDetails} />
+            <Text>Logo!</Text>
+            <Button title="Start" onPress={navigateToLibrary} />
         </View>
     )
 }
