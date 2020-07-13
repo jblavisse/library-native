@@ -15,26 +15,36 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="home" >
+      <Stack.Navigator initialRouteName="home" 
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#777"
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: "bold"
+          }
+        }}>
+          
         <Stack.Screen 
           name="home" 
           component={HomeScreen} 
           options={{
-            "title": "Bienvenue"
+            title: "Bienvenue"
           }} 
         />
         <Stack.Screen 
           name="library" 
           component={LibraryScreen} 
           options={{
-            "title": "Bibliothèque"
+            title: "Bibliothèque"
           }}
         />
         <Stack.Screen 
           name="book" 
           component={BookScreen} 
           options={{
-            "title": "Détails d'un livre"
+            title: "Détails d'un livre"
           }} 
         />
       </Stack.Navigator>
